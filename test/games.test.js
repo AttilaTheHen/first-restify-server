@@ -1,6 +1,7 @@
 const mongo = require('../lib/mongodb');
 const { assert } = require('chai');
-const request = require('./request');
+// const request = require('./request');
+const request = require('../lib/app');
 
 function save(game) {
     return request
@@ -23,7 +24,6 @@ let deviceGame;
 let personaGame;
 
 describe('Cool Games API', () => {
-
     beforeEach(() => {
         return mongo.then(db => {
             return db.collection('coolgames').remove();
